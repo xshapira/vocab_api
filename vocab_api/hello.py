@@ -12,7 +12,7 @@ def get_list(url):
 
 class Word():
     def __init__(self,word1):
-        r  = requests.get('https://www.vocabulary.com/dictionary/'+word1)
+        r = requests.get(f'https://www.vocabulary.com/dictionary/{word1}')
         soup = BeautifulSoup(r.content,features="lxml")
         self.word = word1
         self.short_desc = list(map(str,soup.select('.short')))
